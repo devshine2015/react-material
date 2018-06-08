@@ -1,0 +1,973 @@
+//out:index.css
+@boxShadow: -1px 4px 21px -5px rgba(0, 0, 0, 0.27);
+html {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    ;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+@orange: #f27f22;
+@blue: #0099ff;
+@yellow: #f0c516;
+@green: #099e44;
+@red: #c9212e;
+@darkGray: #736f6f;
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+input[type=data]::-webkit-inner-spin-button,
+input[type=data]::-webkit-outter-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outter-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+input {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.mainContainer {
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-weight: 400;
+    background: white;
+    .navbar {
+        position: absolute;
+        width: 8rem;
+        height: 100%;
+        background: black;
+        .logo {
+            position: absolute;
+            width: 6rem;
+            height: 6rem;
+            top: 2rem;
+            left: 1rem;
+            border-radius: 50%;
+            background: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 6rem;
+        }
+        .image {
+            position: absolute;
+            width: 4rem;
+            top: 10rem;
+            left: 2rem;
+        }
+    }
+    .menus {
+        position: absolute;
+        width: 28rem;
+        top: 0rem;
+        bottom: 0;
+        background: rgb(55, 54, 54);
+        left: 0rem;
+        box-sizing: border-box;
+        padding-top: 1rem;
+        .menu {
+            position: relative;
+            width: 100%;
+            height: 5rem;
+            line-height: 5rem;
+            float: left;
+            box-sizing: border-box;
+            padding-left: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            .logo {
+                position: absolute;
+                width: 2rem;
+                left: 3rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .text {
+                position: absolute;
+                left: 6rem;
+                right: 0;
+                font-size: 1.8rem;
+                color: white;
+            }
+        }
+    }
+    .dashboard {
+        position: absolute;
+        left: 28rem;
+        height: 100%;
+        right: 0;
+        background: #f1f1f1;
+        overflow: auto;
+        .header {
+            position: absolute;
+            width: 100%;
+            height: 6rem;
+            line-height: 6rem;
+            font-size: 3rem;
+            font-weight: 600;
+            box-sizing: border-box;
+            padding-left: 1.5%;
+            .sub-text {
+                position: absolute;
+                width: auto;
+                height: auto;
+                top: 60%;
+                transform: translateY(-50%);
+                right: 1.6%;
+                font-size: 1.4rem;
+                color: gray;
+                cursor: pointer;
+            }
+        }
+        .charts {
+            position: absolute;
+            widtH: 100%;
+            height: 25rem;
+            top: 6rem;
+            box-sizing: border-box; //padding-left: 1.5rem;
+            .chart {
+                position: relative;
+                width: 31.34%;
+                height: 23rem;
+                float: left;
+                background: white;
+                margin-left: 1.5%;
+                margin-top: 1rem; // &.first{
+                //     margin-left: 0rem;
+                // }
+                .cc {
+                    position: absolute;
+                    width: 100%;
+                    height: 16rem; //background: rgb(234, 137, 137);
+                }
+                .sales1 {
+                    position: absolute;
+                    width: 100%;
+                    height: 7rem;
+                    top: 16rem;
+                    box-sizing: border-box;
+                    padding-left: 1.5rem;
+                    font-size: 3rem;
+                    line-height: 7rem;
+                    font-weight: 600;
+                    z-index: 1;
+                }
+                .download {
+                    position: absolute;
+                    width: auto;
+                    right: 1.5rem;
+                    bottom: 2.5rem;
+                    color: gray;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    z-index: 2;
+                }
+            }
+        }
+        .sub-header-1 {
+            position: absolute;
+            width: 64%;
+            height: 6rem;
+            line-height: 6rem;
+            font-size: 2rem;
+            font-weight: 400;
+            box-sizing: border-box;
+            margin-left: 1.5%;
+            top: 31rem;
+        }
+        .sub-header-2 {
+            position: absolute;
+            width: 31.34%;
+            height: 6rem;
+            line-height: 6rem;
+            font-size: 2rem;
+            font-weight: 400;
+            box-sizing: border-box;
+            margin-left: 1.5%;
+            top: 31rem;
+            left: 65.67%;
+        }
+        .sales {
+            position: absolute;
+            width: 64%;
+            line-height: 6rem;
+            font-size: 2rem;
+            font-weight: 400;
+            box-sizing: border-box;
+            margin-left: 1.5%;
+            top: 37rem;
+            bottom: 0;
+            background: white;
+            .salesTrends {
+                position: absolute;
+                width: 100%;
+                height: 3rem;
+                box-sizing: border-box;
+                color: gray;
+                font-size: 1.5rem;
+                line-height: 5rem;
+                padding-left: 1.5rem;
+            }
+            .charts {
+                position: absolute;
+                width: 100%;
+                height: 14rem;
+                top: 4rem;
+                .chart {
+                    position: relative;
+                    width: 31.34%;
+                    height: 100%;
+                    float: left;
+                    margin-left: 1.5%;
+                    margin-top: 1rem;
+                    &.green {
+                        background: rgb(30, 211, 30);
+                    }
+                    &.blue {
+                        background: #01318a;
+                    }
+                    &.orange {
+                        background: rgb(231, 162, 50);
+                    }
+                    .status {
+                        position: absolute;
+                        widtH: 100%;
+                        height: 50%;
+                        .val {
+                            position: absolute;
+                            width: auto;
+                            height: 100%;
+                            line-height: 7rem;
+                            font-size: 3rem;
+                            color: white;
+                            left: 1.5rem;
+                        }
+                        .img {
+                            position: absolute;
+                            height: 5rem;
+                            top: 1rem;
+                            right: 1.5rem;
+                        }
+                    }
+                    .text {
+                        position: absolute;
+                        widtH: 100%;
+                        height: 50%;
+                        top: 50%;
+                        .line {
+                            position: absolute;
+                            widtH: 100%;
+                            height: 4rem;
+                            font-size: 2rem;
+                            line-height: 3rem;
+                            box-sizing: border-box;
+                            padding-left: 1.5rem;
+                            color: white;
+                        }
+                        .percent {
+                            position: absolute;
+                            widtH: 100%;
+                            height: 3rem;
+                            top: 4rem;
+                            font-size: 1.5rem;
+                            line-height: 1rem;
+                            box-sizing: border-box;
+                            padding-left: 1.5rem;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .subsInfo {
+                position: absolute;
+                width: 100%;
+                height: 3rem;
+                box-sizing: border-box;
+                color: gray;
+                font-size: 1.5rem;
+                line-height: 5rem;
+                padding-left: 1.5rem;
+                top: 20rem;
+            }
+            .usersContainer {
+                position: absolute;
+                top: 24rem;
+                bottom: 0;
+                width: 100%;
+                .ucHeader {
+                    position: absolute;
+                    height: 7rem;
+                    width: 100%;
+                    .filter {
+                        position: relative;
+                        widtH: auto;
+                        height: 5rem;
+                        margin-top: 1rem;
+                        box-sizing: border-box; // padding-left: 1rem;
+                        // padding-right: 1rem;
+                        float: left;
+                        margin-left: 1.5rem;
+                        cursor: pointer;
+                        &.selected {
+                            border-bottom: 2px solid red;
+                        }
+                    }
+                    .search {
+                        position: absolute;
+                        width: 30rem;
+                        height: 4rem;
+                        top: 1.5rem;
+                        right: 2.5rem;
+                        border: 1px solid gray;
+                        border-radius: 3rem;
+                        outline: none;
+                        box-sizing: border-box;
+                        padding-left: 1rem;
+                    }
+                    .searchIcon {
+                        position: absolute;
+                        height: 3rem;
+                        top: 2rem;
+                        right: 3.5rem;
+                    }
+                }
+                .users {
+                    position: absolute;
+                    width: 100%;
+                    top: 7rem;
+                    bottom: 1.5rem;
+                    overflow: auto;
+                    .user {
+                        position: relative;
+                        width: 100%;
+                        height: 7rem;
+                        float: left;
+                        line-height: 7rem;
+                        font-size: 1.8rem;
+                        .name {
+                            position: relative;
+                            width: 33.33%;
+                            height: 100%;
+                            float: left;
+                            box-sizing: border-box;
+                            padding-left: 2rem;
+                            .logo {
+                                position: absolute;
+                                width: 5rem;
+                                height: 5rem;
+                                top: 1rem;
+                                left: 1rem;
+                                border-radius: 50%;
+                                line-height: 5rem;
+                                color: white;
+                                text-align: center;
+                                font-size: 2.5rem;
+                                font-weight: 600;
+                                background: black;
+                                &.icon {
+                                    background: none;
+                                    height: 3rem;
+                                    top: 2rem;
+                                }
+                            }
+                            .text {
+                                position: absolute;
+                                left: 7rem;
+                                right: 0;
+                                height: 100%;
+                                &.number {
+                                    left: 6rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .reports {
+            position: absolute;
+            width: 31.34%;
+            line-height: 6rem;
+            font-size: 2rem;
+            font-weight: 400;
+            box-sizing: border-box;
+            margin-left: 1.5%;
+            top: 37rem;
+            left: 65.67%;
+            bottom: 0rem;
+            background: white;
+            overflow: auto;
+            .downloadAll {
+                position: relative;
+                width: 80%;
+                height: 3rem;
+                margin-left: 10%;
+                box-sizing: border-box;
+                color: gray;
+                font-size: 1.5rem;
+                line-height: 5rem;
+                cursor: pointer;
+            }
+            .report {
+                position: relative;
+                widtH: 80%;
+                height: 14rem;
+                float: left;
+                box-sizing: border-box;
+                border: 1px solid rgb(228, 227, 227);
+                margin-left: 10%;
+                margin-top: 2rem;
+                .reportHeader {
+                    position: absolute;
+                    widtH: 100%;
+                    height: 5rem;
+                    line-height: 6rem;
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    box-sizing: border-box;
+                    padding-left: 1.5rem;
+                }
+                .date {
+                    position: absolute;
+                    widtH: 100%;
+                    height: 4rem;
+                    line-height: 3rem;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    top: 5rem;
+                    box-sizing: border-box;
+                    padding-left: 1.5rem;
+                    color: gray;
+                    border-bottom: 1px solid rgb(228, 227, 227);
+                }
+                .buttons {
+                    position: absolute;
+                    widtH: 100%;
+                    height: 5rem;
+                    line-height: 5rem;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    top: 9rem;
+                    color: gray;
+                    text-align: center;
+                    .button {
+                        position: relative;
+                        width: 50%;
+                        height: 100%;
+                        float: left;
+                        cursor: pointer;
+                        &.border {
+                            box-sizing: border-box;
+                            border-right: 1px solid rgb(228, 227, 227);
+                        }
+                    }
+                }
+            }
+        }
+        .loader {
+            position: absolute;
+            widtH: 100%;
+            height: 15rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .lImg {
+                position: absolute;
+                height: 10rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .text {
+                position: absolute;
+                widtH: 100%;
+                height: 5rem;
+                top: 10rem;
+                line-height: 5rem;
+                color: rgb(75, 63, 63);
+                font-weight: 400;
+                font-size: 2.5rem;
+                text-align: center;
+            }
+        }
+        .allOrdersContainer {
+            position: absolute;
+            width: 100%;
+            top: 6rem;
+            bottom: 0;
+            overflow: hidden;
+            .searchArea {
+                position: absolute;
+                width: 100%;
+                height: 7rem;
+                .filter {
+                    position: absolute;
+                    width: 20rem;
+                    right: 2rem;
+                    font-size: 2rem;
+                    line-height: 6rem;
+                    height: 6rem;
+                    top: 0.5rem;
+                    background: white;
+                    .text {
+                        text-align: center;
+                        width: 18rem;
+                    }
+                    .dropdownButton {
+                        position: absolute;
+                        height: 12rem;
+                        top: -2rem;
+                        right: -3rem;
+                    }
+                    .dropdown {
+                        position: absolute;
+                        width: 20rem;
+                        height: auto;
+                        display: none;
+                        background: white;
+                        box-sizing: border-box;
+                        border-left: 1px solid rgb(188, 181, 181);
+                        border-right: 1px solid rgb(188, 181, 181);
+                        border-top: 1px solid rgb(188, 181, 181);
+                        box-shadow: @boxShadow;
+                        z-index: 1;
+                        .list {
+                            position: relative;
+                            width: 100%;
+                            height: 5rem;
+                            font-size: 2rem;
+                            padding-left: 1rem;
+                            box-sizing: border-box;
+                            line-height: 5rem;
+                            text-transform: uppercase;
+                            border-bottom: 1px solid rgb(188, 181, 181);
+                        }
+                    }
+                }
+                .inputArea {
+                    position: absolute;
+                    left: 2rem;
+                    right: 24rem;
+                    height: 6rem;
+                    top: 0.5rem;
+                    line-height: 6rem;
+                    background: white;
+                    font-size: 1.8rem;
+                    .inputArea-1 {
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 1rem;
+                        padding-left: 1.5rem;
+                        outline: none;
+                        border: none;
+                    }
+                }
+                .searchButton {
+                    position: absolute;
+                    height: 3rem;
+                    top: 2rem;
+                    right: 26rem;
+                }
+            }
+            .orderHeader {
+                position: absolute;
+                left: 2rem;
+                right: 2rem;
+                height: 6rem;
+                top: 7rem;
+                .col {
+                    position: relative;
+                    float: left;
+                    width: 16.45%;
+                    height: 100%;
+                    line-height: 9rem;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    text-align: center;
+                    text-transform: capitalize;
+                }
+            }
+            .orders {
+                position: absolute;
+                top: 14rem;
+                bottom: 0;
+                left: 2rem;
+                right: 2rem;
+                overflow: auto;
+                .order {
+                    position: relative;
+                    width: 100%;
+                    height: 7rem;
+                    line-height: 7rem;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    text-align: center;
+                    text-transform: capitalize;
+                    background: white;
+                    margin-top: 1.5rem;
+                    .col {
+                        position: relative;
+                        width: 16.66%;
+                        float: left;
+                        height: 7rem;
+                        &.col-6 {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .export {
+                position: absolute;
+                width: 5rem;
+                height: 5rem;
+                right: 2rem;
+                bottom: 1rem; //background: red;
+                cursor: pointer;
+                .eb {
+                    position: absolute;
+                    width: 4rem;
+                    top: 1rem;
+                    left: 1rem;
+                }
+            }
+        }
+        .orderDetailContainer {
+            position: absolute;
+            width: 100%;
+            top: 6rem;
+            bottom: 0;
+            .sub-header {
+                position: relative;
+                width: 100%;
+                height: 6rem;
+                float: left;
+                line-height: 6rem;
+                font-size: 2rem;
+                box-sizing: border-box;
+                padding-left: 2rem;
+            }
+            .line-items {
+                position: relative;
+                width: 96%;
+                height: auto;
+                float: left;
+                box-sizing: border-box; // padding-left: 2rem;
+                // padding-right: 2rem;
+                margin-left: 2%;
+                .line-item {
+                    position: relative;
+                    width: 100%;
+                    height: 12rem;
+                    float: left;
+                    background: white;
+                    margin-top: 2rem;
+                    .li {
+                        position: relative;
+                        height: 100%;
+                        float: left;
+                        font-size: 1.8rem;
+                        line-height: 12rem;
+                        &.w10 {
+                            width: 10%;
+                        }
+                        &.w20 {
+                            width: 20%;
+                        }
+                        .row-1 {
+                            position: absolute;
+                            width: 100%;
+                            height: 2rem;
+                            line-height: 2rem;
+                            top: 3.5rem;
+                            &.b {
+                                font-weight: 600;
+                            }
+                        }
+                        .row-2 {
+                            position: absolute;
+                            width: 100%;
+                            height: 2rem;
+                            line-height: 2rem;
+                            bottom: 3.5rem;
+                            &.rca {
+                                cursor: pointer;
+                            }
+                            &.nrca {
+                                cursor: pointer;
+                            }
+                            .edit-icon {
+                                position: relative;
+                                height: 2rem;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                left: 1rem;
+                            }
+                        }
+                        .image {
+                            position: absolute;
+                            height: 8rem;
+                            top: 50%; //lefT: 50%;
+                            left: 2rem;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+            .information {
+                position: relative;
+                width: 96%;
+                height: auto;
+                float: left;
+                box-sizing: border-box; // padding-left: 2rem;
+                // padd-right: 2rem;
+                margin-left: 2%;
+                margin-top: 2rem;
+                background: white;
+                padding-bottom: 2rem;
+                .info-header {
+                    position: relative;
+                    width: 100%;
+                    height: 6rem;
+                    float: left;
+                    line-height: 6rem;
+                    font-size: 2.5rem;
+                    box-sizing: border-box;
+                    padding-left: 2rem;
+                    font-weight: 600;
+                }
+                .info-item {
+                    position: relative;
+                    width: 50%;
+                    height: auto;
+                    line-height: 2rem;
+                    font-size: 1.8rem;
+                    float: left;
+                    box-sizing: border-box;
+                    padding-left: 2rem;
+                    margin-top: .5rem;
+                    margin-bottom: .5rem;
+                    color: rgb(81, 76, 76);
+                }
+            }
+        }
+    }
+    .pop-up-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        .pop-up {
+            position: absolute;
+            width: 40rem;
+            height: 25rem;
+            border-radius: 2px;
+            border: 1px solid black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 43px 2px;
+            .pop-up-header {
+                position: absolute;
+                width: 100%;
+                height: 5rem;
+                font-size: 2.5rem;
+                line-height: 5rem;
+                box-sizing: border-box;
+                padding-left: 1rem;
+                background: black;
+                color: white;
+                font-weight: 600;
+            }
+            .pop-up-area {
+                position: absolute;
+                width: 100%;
+                top: 5rem;
+                bottom: 5rem;
+                background: rgb(55, 54, 54);
+                font-size: 2rem;
+                font-weight: 400;
+                .pop-up-input {
+                    position: absolute;
+                    width: 80%;
+                    height: 5rem;
+                    font-size: 2rem;
+                    line-height: 5rem;
+                    box-sizing: border-box;
+                    padding-left: 1rem;
+                    background: rgb(55, 54, 54);
+                    color: white;
+                    font-weight: 600;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    outline: none;
+                    border: none;
+                    border: 1px solid black;
+                    border-radius: 2px;
+                }
+            }
+            .pop-up-footer {
+                position: absolute;
+                width: 100%;
+                height: 5rem;
+                font-size: 2.5rem;
+                line-height: 5rem;
+                box-sizing: border-box;
+                bottom: 0;
+                border-top: 1px solid black;
+                color: black;
+                font-weight: 600;
+                background: rgb(55, 54, 54);
+                .pop-up-btn {
+                    position: relative;
+                    width: 50%;
+                    height: 100%;
+                    float: right;
+                    text-align: center;
+                    &.btn1 {
+                        background: black;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .addProductContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+
+        .pop-up {
+            position: absolute;
+            width: 50rem;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 43px 2px;
+            box-sizing: border-box;
+            padding: 2rem;
+            background: white;
+
+            .p-row {
+                position: relative;
+                width: 80%;
+                float: left;
+                margin-left: 10%;
+                margin-top: 2rem;
+                font-size: 2rem;
+                color: black;
+                box-sizing: border-box;
+                padding-left: 1rem;
+                height: 5rem;
+                line-height: 5rem;
+                border: 1px solid gray;
+                border-radius: 5px;
+                .check{
+                    position: absolute;
+                    width: 3rem;
+                    height: 3rem;
+                    top:0.8rem;
+                    left: 1rem;
+                    border: 1px solid;
+                    &.selected{
+                        background: black;
+                    }
+                }
+
+                .text{
+                    position: absolute;
+                    left:5rem;
+                    right: 0;
+                    text-transform: capitalize;
+                }
+
+                &.nob{
+                    border: none;
+                }
+
+                &.f{
+                    background: @red;
+                    color: white;
+                    text-align: center;
+                    font-weight: 600;
+                    width: 35%;
+                    padding: 0;
+                }
+
+                &.cancel{
+                    background: white;
+                    color: black;
+                    padding: 0;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: gray;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: @blue;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: @blue;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: @blue;
+}

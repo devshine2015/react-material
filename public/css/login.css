@@ -1,0 +1,204 @@
+html {
+  font-size: 10px;
+  font-weight: 300;
+}
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+input[type=data]::-webkit-inner-spin-button,
+input[type=data]::-webkit-outter-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outter-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+input {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.mainContainer {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-weight: 400;
+  background: #c9212e;
+}
+.mainContainer .mainHeader {
+  position: absolute;
+  width: 30rem;
+  height: 10rem;
+  line-height: 10rem;
+  color: white;
+  left: 12.5%;
+  font-size: 3.5rem;
+  top: 2rem;
+}
+.mainContainer .signup-btn {
+  position: absolute;
+  width: auto;
+  height: 5rem;
+  line-height: 5rem;
+  color: white;
+  right: 12.5%;
+  font-size: 2rem;
+  top: 4rem;
+  border-radius: 4px;
+  border: 1px solid white;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+}
+.mainContainer .loginContainer {
+  position: absolute;
+  width: 75%;
+  height: 70%;
+  left: 12.5%;
+  top: 20%;
+  background: #E9E9E9;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.mainContainer .loginContainer .form {
+  position: absolute;
+  width: 55rem;
+  height: 116%;
+  right: 5%;
+  background: #FAFAFA;
+  top: -8%;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+.mainContainer .loginContainer .form .header {
+  position: relative;
+  width: 84%;
+  height: 8rem;
+  float: left;
+  font-size: 3rem;
+  margin-left: 8%;
+  line-height: 8rem;
+  color: #58666e;
+  margin-top: 8%;
+  font-weight: 600;
+}
+.mainContainer .loginContainer .form .detail {
+  position: relative;
+  width: 84%;
+  height: 2rem;
+  float: left;
+  font-size: 2rem;
+  margin-left: 8%;
+  line-height: 2rem;
+  color: #58666e;
+}
+.mainContainer .loginContainer .form .detail.login-error {
+  display: none;
+  color: #c9212e;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.mainContainer .loginContainer .form .formInput {
+  position: relative;
+  width: 84%;
+  height: 11rem;
+  float: left;
+  font-size: 2.5rem;
+  margin-left: 8%;
+  color: #58666e;
+  margin-top: 8%;
+  font-weight: 600;
+}
+.mainContainer .loginContainer .form .formInput .text {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+}
+.mainContainer .loginContainer .form .formInput .input {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  border: 1px solid #b9b0b0;
+  border-radius: 2px;
+  margin-top: 1rem;
+  color: #58666e;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.mainContainer .loginContainer .form .login-btn {
+  position: relative;
+  width: 84%;
+  height: 6rem;
+  float: left;
+  line-height: 6rem;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  background: #c9212e;
+  margin-top: 10%;
+  margin-left: 8%;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.mainContainer .loginContainer .info {
+  position: absolute;
+  left: 5%;
+  top: 4%;
+  bottom: 0;
+  right: 70rem;
+}
+.mainContainer .loginContainer .info .h {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  font-size: 2rem;
+  color: #58666e;
+  font-weight: 600;
+  line-height: 5rem;
+  margin-top: 2rem;
+}
+.mainContainer .loginContainer .info .t {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: 1.9rem;
+  color: #58666e;
+  line-height: 2.5rem;
+}
+.mainContainer ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #a4abb0;
+}

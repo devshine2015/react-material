@@ -1,0 +1,54 @@
+{
+  "name": "order_approval",
+  "plural": "order_approvals",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "contents": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string"
+    },
+    "status_date_change": {
+      "type": "date"
+    },
+    "dictionary_version": {
+      "type": "string"
+    },
+    "dictionary_approval": {
+      "type": "boolean"
+    },
+    "file_object_idc": {
+      "type": "string"
+    },
+    "idkey": {
+      "type": "string"
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "approved_at": {
+      "type": "date"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "DENY"
+  }],
+  "methods": {}
+}

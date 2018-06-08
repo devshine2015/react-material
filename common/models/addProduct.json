@@ -1,0 +1,47 @@
+{
+    "name": "product",
+    "plural": "products",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "sku": {
+            "type": "string"
+        },
+        "category_code": {
+            "type": "number"
+        },
+        "category": {
+            "type": "string"
+        },
+        "idkey": {
+            "type": "string"
+        },
+        "company_name": {
+            "type": "string"
+        },
+        "company_id": {
+            "type": "string"
+        },
+        "nickname": {
+            "type": "string"
+        },
+        "isActive": {
+            "type": "number"
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [{
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$unauthenticated",
+        "permission": "DENY"
+    }],
+    "methods": {}
+}

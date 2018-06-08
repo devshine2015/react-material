@@ -1,0 +1,1251 @@
+html {
+  font-size: 10px;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:focus, input:focus, select:focus, textarea:focus {
+  outline: none;
+}
+
+input[type=data]::-webkit-inner-spin-button, input[type=data]::-webkit-outter-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outter-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+input {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.mainContainer {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-weight: 400;
+  background: white;
+}
+
+.mainContainer .navbar {
+  position: absolute;
+  width: 8rem;
+  height: 100%;
+  background: black;
+}
+
+.mainContainer .navbar .logo {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  top: 2rem;
+  left: 1rem;
+  border-radius: 50%;
+  background: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 6rem;
+}
+
+.mainContainer .navbar .image {
+  position: absolute;
+  width: 4rem;
+  top: 10rem;
+  left: 2rem;
+}
+
+.mainContainer .menus {
+  position: absolute;
+  width: 20rem;
+  top: 0rem;
+  bottom: 0;
+  background: #373636;
+  left: 8rem;
+  box-sizing: border-box;
+  padding-top: 1rem;
+}
+
+.mainContainer .menus .menu {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.mainContainer .menus .menu .logo {
+  position: absolute;
+  width: 2rem;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mainContainer .menus .menu .text {
+  position: absolute;
+  left: 6rem;
+  right: 0;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.mainContainer .dashboard {
+  position: absolute;
+  left: 28rem;
+  height: 100%;
+  right: 0;
+  background: #f1f1f1;
+}
+
+.mainContainer .dashboard .header {
+  position: absolute;
+  width: 100%;
+  height: 6rem;
+  line-height: 6rem;
+  font-size: 3rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding-left: 1.5%;
+}
+
+.mainContainer .dashboard .header .sub-text {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 60%;
+  transform: translateY(-50%);
+  right: 1.6%;
+  font-size: 1.4rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.mainContainer .dashboard .charts {
+  position: absolute;
+  widtH: 100%;
+  height: 25rem;
+  top: 6rem;
+  box-sizing: border-box;
+}
+
+.mainContainer .dashboard .charts .chart {
+  position: relative;
+  width: 31.34%;
+  height: 23rem;
+  float: left;
+  background: white;
+  margin-left: 1.5%;
+  margin-top: 1rem;
+}
+
+.mainContainer .dashboard .charts .chart .cc {
+  position: absolute;
+  width: 100%;
+  height: 16rem;
+}
+
+.mainContainer .dashboard .charts .chart .sales1 {
+  position: absolute;
+  width: 100%;
+  height: 7rem;
+  top: 16rem;
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+  font-size: 3rem;
+  line-height: 7rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.mainContainer .dashboard .charts .chart .download {
+  position: absolute;
+  width: auto;
+  right: 1.5rem;
+  bottom: 2.5rem;
+  color: gray;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.mainContainer .dashboard .sub-header-1 {
+  position: absolute;
+  width: 64%;
+  height: 6rem;
+  line-height: 6rem;
+  font-size: 2rem;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin-left: 1.5%;
+  top: 31rem;
+}
+
+.mainContainer .dashboard .sub-header-2 {
+  position: absolute;
+  width: 31.34%;
+  height: 6rem;
+  line-height: 6rem;
+  font-size: 2rem;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin-left: 1.5%;
+  top: 31rem;
+  left: 65.67%;
+}
+
+.mainContainer .dashboard .sales {
+  position: absolute;
+  width: 64%;
+  line-height: 6rem;
+  font-size: 2rem;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin-left: 1.5%;
+  top: 37rem;
+  bottom: 0;
+  background: white;
+}
+
+.mainContainer .dashboard .sales .salesTrends {
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  box-sizing: border-box;
+  color: gray;
+  font-size: 1.5rem;
+  line-height: 5rem;
+  padding-left: 1.5rem;
+}
+
+.mainContainer .dashboard .sales .charts {
+  position: absolute;
+  width: 100%;
+  height: 14rem;
+  top: 4rem;
+}
+
+.mainContainer .dashboard .sales .charts .chart {
+  position: relative;
+  width: 31.34%;
+  height: 100%;
+  float: left;
+  margin-left: 1.5%;
+  margin-top: 1rem;
+}
+
+.mainContainer .dashboard .sales .charts .chart.green {
+  background: #1ed31e;
+}
+
+.mainContainer .dashboard .sales .charts .chart.blue {
+  background: #3939e6;
+}
+
+.mainContainer .dashboard .sales .charts .chart.orange {
+  background: #e7a232;
+}
+
+.mainContainer .dashboard .sales .charts .chart .status {
+  position: absolute;
+  widtH: 100%;
+  height: 50%;
+}
+
+.mainContainer .dashboard .sales .charts .chart .status .val {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  line-height: 7rem;
+  font-size: 3rem;
+  color: white;
+  left: 1.5rem;
+}
+
+.mainContainer .dashboard .sales .charts .chart .status .img {
+  position: absolute;
+  height: 5rem;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.mainContainer .dashboard .sales .charts .chart .text {
+  position: absolute;
+  widtH: 100%;
+  height: 50%;
+  top: 50%;
+}
+
+.mainContainer .dashboard .sales .charts .chart .text .line {
+  position: absolute;
+  widtH: 100%;
+  height: 4rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+  color: white;
+}
+
+.mainContainer .dashboard .sales .charts .chart .text .percent {
+  position: absolute;
+  widtH: 100%;
+  height: 3rem;
+  top: 4rem;
+  font-size: 1.5rem;
+  line-height: 1rem;
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+  color: white;
+}
+
+.mainContainer .dashboard .sales .subsInfo {
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  box-sizing: border-box;
+  color: gray;
+  font-size: 1.5rem;
+  line-height: 5rem;
+  padding-left: 1.5rem;
+  top: 20rem;
+}
+
+.mainContainer .dashboard .sales .usersContainer {
+  position: absolute;
+  top: 24rem;
+  bottom: 0;
+  width: 100%;
+}
+
+.mainContainer .dashboard .sales .usersContainer .ucHeader {
+  position: absolute;
+  height: 7rem;
+  width: 100%;
+}
+
+.mainContainer .dashboard .sales .usersContainer .ucHeader .filter {
+  position: relative;
+  widtH: auto;
+  height: 5rem;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+.mainContainer .dashboard .sales .usersContainer .ucHeader .filter.selected {
+  border-bottom: 2px solid red;
+}
+
+.mainContainer .dashboard .sales .usersContainer .ucHeader .search {
+  position: absolute;
+  width: 30rem;
+  height: 4rem;
+  top: 1.5rem;
+  right: 2.5rem;
+  border: 1px solid gray;
+  border-radius: 3rem;
+  outline: none;
+  box-sizing: border-box;
+  padding-left: 1rem;
+}
+
+.mainContainer .dashboard .sales .usersContainer .ucHeader .searchIcon {
+  position: absolute;
+  height: 3rem;
+  top: 2rem;
+  right: 3.5rem;
+}
+
+.mainContainer .dashboard .sales .usersContainer .users {
+  position: absolute;
+  width: 100%;
+  top: 7rem;
+  bottom: 1.5rem;
+  overflow: auto;
+}
+
+.mainContainer .dashboard .sales .usersContainer .users .user {
+  position: relative;
+  width: 100%;
+  height: 7rem;
+  float: left;
+  line-height: 7rem;
+  font-size: 1.8rem;
+}
+
+.mainContainer .dashboard .sales .usersContainer .users .user .name {
+  position: relative;
+  width: 33.33%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 2rem;
+}
+
+.mainContainer .dashboard .sales .usersContainer .users .user .name .logo {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 50%;
+  line-height: 5rem;
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: black;
+}
+
+.mainContainer .dashboard .sales .usersContainer .users .user .name .logo.icon {
+  background: none;
+  height: 3rem;
+  top: 2rem;
+}
+
+.mainContainer .dashboard .sales .usersContainer .users .user .name .text {
+  position: absolute;
+  left: 7rem;
+  right: 0;
+  height: 100%;
+}
+
+.mainContainer .dashboard .sales .usersContainer .users .user .name .text.number {
+  left: 6rem;
+}
+
+.mainContainer .dashboard .reports {
+  position: absolute;
+  width: 31.34%;
+  line-height: 6rem;
+  font-size: 2rem;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin-left: 1.5%;
+  top: 37rem;
+  left: 65.67%;
+  bottom: 0rem;
+  background: white;
+  overflow: auto;
+}
+
+.mainContainer .dashboard .reports .downloadAll {
+  position: relative;
+  width: 80%;
+  height: 3rem;
+  margin-left: 10%;
+  box-sizing: border-box;
+  color: gray;
+  font-size: 1.5rem;
+  line-height: 5rem;
+  cursor: pointer;
+}
+
+.mainContainer .dashboard .reports .report {
+  position: relative;
+  widtH: 80%;
+  height: 14rem;
+  float: left;
+  box-sizing: border-box;
+  border: 1px solid #e4e3e3;
+  margin-left: 10%;
+  margin-top: 2rem;
+}
+
+.mainContainer .dashboard .reports .report .reportHeader {
+  position: absolute;
+  widtH: 100%;
+  height: 5rem;
+  line-height: 6rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+}
+
+.mainContainer .dashboard .reports .report .date {
+  position: absolute;
+  widtH: 100%;
+  height: 4rem;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  top: 5rem;
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+  color: gray;
+  border-bottom: 1px solid #e4e3e3;
+}
+
+.mainContainer .dashboard .reports .report .buttons {
+  position: absolute;
+  widtH: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  top: 9rem;
+  color: gray;
+  text-align: center;
+}
+
+.mainContainer .dashboard .reports .report .buttons .button {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  float: left;
+  cursor: pointer;
+}
+
+.mainContainer .dashboard .reports .report .buttons .button.border {
+  box-sizing: border-box;
+  border-right: 1px solid #e4e3e3;
+}
+
+.mainContainer .dashboard .loader {
+  position: absolute;
+  widtH: 100%;
+  height: 15rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mainContainer .dashboard .loader .lImg {
+  position: absolute;
+  height: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mainContainer .dashboard .loader .text {
+  position: absolute;
+  widtH: 100%;
+  height: 5rem;
+  top: 10rem;
+  line-height: 5rem;
+  color: #4b3f3f;
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.mainContainer .dashboard .allOrdersContainer {
+  position: absolute;
+  width: 100%;
+  top: 6rem;
+  bottom: 0;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea {
+  position: absolute;
+  width: 100%;
+  height: 7rem;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea .filter {
+  position: absolute;
+  width: 20rem;
+  right: 2rem;
+  font-size: 2rem;
+  line-height: 6rem;
+  height: 6rem;
+  top: 0.5rem;
+  background: white;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea .filter .text {
+  text-align: center;
+  width: 18rem;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea .filter .dropdownButton {
+  position: absolute;
+  height: 12rem;
+  top: -2rem;
+  right: -3rem;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea .filter .dropdown {
+  position: absolute;
+  width: 20rem;
+  height: auto;
+  display: none;
+  background: white;
+  box-sizing: border-box;
+  border-left: 1px solid #bcb5b5;
+  border-right: 1px solid #bcb5b5;
+  border-top: 1px solid #bcb5b5;
+  box-shadow: -1px 4px 21px -5px rgba(0, 0, 0, 0.27);
+  z-index: 1;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea .filter .dropdown .list {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  font-size: 2rem;
+  padding-left: 1rem;
+  box-sizing: border-box;
+  line-height: 5rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid #bcb5b5;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea .inputArea {
+  position: absolute;
+  left: 2rem;
+  right: 24rem;
+  height: 6rem;
+  top: 0.5rem;
+  line-height: 6rem;
+  background: white;
+  font-size: 1.8rem;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea .inputArea .inputArea-1 {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  outline: none;
+  border: none;
+}
+
+.mainContainer .dashboard .allOrdersContainer .searchArea .searchButton {
+  position: absolute;
+  height: 3rem;
+  top: 2rem;
+  right: 26rem;
+}
+
+.mainContainer .dashboard .allOrdersContainer .orderHeader {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  height: 6rem;
+  top: 7rem;
+}
+
+.mainContainer .dashboard .allOrdersContainer .orderHeader .col {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 100%;
+  line-height: 9rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.mainContainer .dashboard .allOrdersContainer .orders {
+  position: absolute;
+  top: 12rem;
+  bottom: 0;
+  left: 2rem;
+  right: 2rem;
+  overflow: auto;
+}
+
+.mainContainer .dashboard .allOrdersContainer .orders .order {
+  position: relative;
+  width: 100%;
+  height: 7rem;
+  line-height: 7rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: capitalize;
+  background: white;
+  margin-top: 1.5rem;
+}
+
+.mainContainer .dashboard .allOrdersContainer .orders .order .col {
+  position: relative;
+  width: 20%;
+  float: left;
+}
+
+.mainContainer .dashboard .allOrdersContainer .orders .order .col.col-5 {
+  cursor: pointer;
+}
+
+.mainContainer .dashboard .allOrdersContainer .export {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  right: 2rem;
+  bottom: 1rem;
+  cursor: pointer;
+}
+
+.mainContainer .dashboard .allOrdersContainer .export .eb {
+  position: absolute;
+  width: 4rem;
+  top: 1rem;
+  left: 1rem;
+}
+
+.mainContainer .dashboard .orderDetailContainer {
+  position: absolute;
+  width: 100%;
+  top: 6rem;
+  bottom: 0;
+}
+
+.mainContainer .dashboard .orderDetailContainer .sub-header {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  float: left;
+  line-height: 6rem;
+  font-size: 2rem;
+  box-sizing: border-box;
+  padding-left: 2rem;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items {
+  position: relative;
+  width: 96%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  margin-left: 2%;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items .line-item {
+  position: relative;
+  width: 100%;
+  height: 12rem;
+  float: left;
+  background: white;
+  margin-top: 2rem;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items .line-item .li {
+  position: relative;
+  height: 100%;
+  float: left;
+  font-size: 1.8rem;
+  line-height: 12rem;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items .line-item .li.w10 {
+  width: 10%;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items .line-item .li.w20 {
+  width: 20%;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items .line-item .li .row-1 {
+  position: absolute;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  top: 3.5rem;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items .line-item .li .row-1.b {
+  font-weight: 600;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items .line-item .li .row-2 {
+  position: absolute;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  bottom: 3.5rem;
+}
+
+.mainContainer .dashboard .orderDetailContainer .line-items .line-item .li .image {
+  position: absolute;
+  height: 8rem;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.mainContainer .dashboard .orderDetailContainer .information {
+  position: relative;
+  width: 96%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  margin-left: 2%;
+  margin-top: 2rem;
+  background: white;
+  padding-bottom: 2rem;
+}
+
+.mainContainer .dashboard .orderDetailContainer .information .info-header {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  float: left;
+  line-height: 6rem;
+  font-size: 2.5rem;
+  box-sizing: border-box;
+  padding-left: 2rem;
+  font-weight: 600;
+}
+
+.mainContainer .dashboard .orderDetailContainer .information .info-item {
+  position: relative;
+  width: 50%;
+  height: auto;
+  line-height: 2rem;
+  font-size: 1.8rem;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  color: #514c4c;
+}
+
+input[type=text], input[type=number], textarea, select {
+  font-size: 1.8rem;
+  background: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 2.4rem
+}
+
+.main {
+  text-align: center;
+}
+
+.main-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.main-header {
+  background-color: #095689;
+  height: 50px;
+  padding: 8px;
+  color: white;
+  text-align: left;
+}
+
+.main-header .main-title {}
+
+.nav {
+  margin: 10px 20px;
+}
+
+.main-title {
+  font-size: 15px;
+  color: white;
+}
+
+.main-intro {
+  font-size: large;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.main-intro button {
+  margin-right: 20px;
+  min-width: 80px;
+}
+
+.main-intro .conver-this-oder {
+  margin-top: 10px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.dashboard {
+  overflow: auto;
+}
+
+.login-container {
+  position: absolute;
+  top: 45%;
+  right: 42%;
+}
+
+.form-header {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.login-button {
+  background: #383737;
+  border-radius: 4px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-size: 15px;
+  margin: 5px 5px;
+  float: right;
+}
+
+button, button:focus, button:active, button:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.nc-button {
+  border-radius: 3px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  height: 36px;
+  line-height: 1;
+  padding: 10px 20px 10px 20px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .nc-button {
+    min-height: 44px;
+    /* Added on 09 Sept as specified by Rebecca in the Review Video */
+  }
+}
+
+.link-button {
+  border: none;
+  background: none;
+  color: #009999;
+  font-weight: 400;
+}
+
+.primary-button {
+  background-color: #006699;
+  border: none;
+  color: #ffffff !important;
+  font-size: 1.8rem;
+  /* DEVIATION :  As per markup this is 18px but did not look right */
+  font-weight: 400;
+  /* DEVIATION :  As per markup this is 600 but did not look right */
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .primary-button {
+    width: 100%;
+  }
+}
+
+.primary-button:hover {
+  background-color: #015782 !important;
+  color: #ffffff !important;
+}
+
+.secondary-button {
+  background-color: #00cccc;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .secondary-button {
+    width: 100% !important;
+  }
+}
+
+.secondary-button:hover {
+  background-color: #00b6b6;
+}
+
+.secondary-link-button {
+  color: #757575;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 0px 10px 0px;
+  text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+  .secondary-link-button {
+    padding: 0px;
+  }
+}
+
+.secondary-link-button:hover {
+  color: #333;
+}
+
+.primary-link-button {
+  color: #009999;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 0px 10px 0px;
+  text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+  .primary-link-button {
+    padding: 0px;
+  }
+}
+
+.primary-link-button:hover {
+  color: #0c4f48;
+}
+
+.menu:hover {
+  background: #000000;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination span {
+  cursor: pointer;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination span:hover {
+  background-color: #582dc6;
+  color: #ffffff;
+}
+.toaster-container {
+  margin: 0px 18px;
+  border: 1px dotted #439967;
+  clear: both;
+}
+
+.toaster-container .toaster {
+  font-size: 15px;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
+
+.alert {
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.alert-success {
+  color: #339966;
+  background-color: #ccffcc;
+  border-color: #26a977;
+}
+
+.close-icon i {
+  margin-right: 0px;
+  color: #339966;
+}
+.dropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  float: right;
+  margin-right: 55px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #00b6b6;
+}
+.order-summary .react-grid-Canvas {
+  width: 1100px !important;
+}
+
+.order-summary .react-grid-HeaderCell {
+  height: 16px !important;
+}
+
+.dashboard .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.dashboard .tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.dashboard .tab button:hover {
+  background-color: #ddd;
+}
+
+.dashboard .tab button.active {
+  background-color: #ccc;
+}
+
+.dashboard .tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.dashboard .cover {
+  padding: 50px 30px;
+}
+
+.dashboard .cover table,
+.dashboard .detail table {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 0 1px 0 #ccc;
+  border-collapse: collapse;
+  float: left;
+  margin: 0 10px 40px 10px;
+}
+
+.dashboard .cover table td,
+.dashboard .cover table th {
+  padding: 10px 35px;
+  border-bottom: 1px solid #ccc;
+}
+
+.dashboard .detail table th {
+  padding: 10px 35px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.dashboard .detail table td {
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.dashboard .detail table td input {
+  text-align: center;
+  padding: 12px 0px;
+}
+
+input.inputText {
+  border: 0px !important;
+  outline: none;
+}
+
+
+
+
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: gray;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #0099ff;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #0099ff;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #0099ff;
+}

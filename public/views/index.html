@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width = device-width, initial-scale = 0, user-scalable = no, minimum-scale = 1, maximum-scale = 1">
+    <meta http-equiv="Expires" content="0" />
+    <meta name="HandheldFriendly" content="true">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="../css/fonts.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/screen.css">
+</head>
+
+<body>
+
+    <div class="mainContainer">
+        <div class="navbar">
+            <div class="logo">Verizon</div>
+            <!-- <img src="../images/settings.png" class="image"> -->
+        </div>
+        <div class="menus">
+            <div class="menu" data-id="dashboard">
+                <img src="../images/dashboard.png" class="logo">
+                <div class="text">Dashboard</div>
+            </div>
+
+            <div class="menu" data-id="sales">
+                <img src="../images/icon-appOrders.png" class="logo">
+                <div class="text">Sales</div>
+            </div>
+
+            <div class="menu" data-id="products">
+                <img src="../images/icon-blackFries-white.png" class="logo">
+                <div class="text">Products</div>
+            </div>
+
+            <div class="menu" data-id="tracking">
+                <img src="../images/icon-blackFries-white.png" class="logo">
+                <div class="text">Logout</div>
+            </div>
+        </div>
+        <div class="dashboard">
+
+        </div>
+        <div class="pop-up-container">
+            <div class="pop-up">
+                <div class="pop-up-header">
+                    Enter New Price
+                </div>
+                <div class="pop-up-area">
+                    <input type="text" class="pop-up-input" placeholder="new amount">
+                </div>
+                <div class="pop-up-footer">
+                    <div class="pop-up-btn btn1">No</div>
+                    <div class="pop-up-btn btn2">Yes</div>
+                </div>
+            </div>
+        </div>
+        <div class="addProductContainer">
+
+        </div>
+    </div>
+</body>
+
+<script id="fileUploadTemplate" type="text/x-jsrender">
+
+</script>
+
+<!-- <script src="../scripts/socket.io.js"></script> -->
+<script src="../scripts/jquery.js"></script>
+<script src="../scripts/jsrender.js"></script>
+<script src="../scripts/jsviews.js"></script>
+<script src="../scripts/jslinq.js"></script>
+<script src="../scripts/moment.min.js"></script>
+<script src="../scripts/notify.js"></script>
+<script src="../scripts/jquery.cookie.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/dashboard.js"></script>
+<script src="../js/sales.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/pop-up.js"></script>
+
+<script type="text/x-jsrender" id="loaderTemplate">
+    <div class="loader">
+        <img src="../images/{{:icon}}" class="lImg">
+        <div class="text">{{: text}}</div>
+    </div>
+</script>
+<!-- Brandon Ikeda 02/05/2018 -->
+<script type="text/x-jsrender" id="dashboardTemplate">
+    <div class="header">
+        Dashboard
+        <span class="sub-text">View all Sales</span>
+    </div>
+    <div class="charts">
+        <div class="chart">
+            <div class="cc">
+                <canvas style="width: 100%; height: 100%" id="first"></canvas>
+            </div>
+            <div class="sales1">${{: totalSales.t}}</div>
+            <div class="download" data-id="t">Download</div>
+        </div>
+        <div class="chart">
+            <div class="cc">
+                <canvas style="width: 100%; height: 100%" id="second"></canvas>
+            </div>
+            <div class="sales1">${{: accessorySales.t}}</div>
+            <div class="download" data-id="a">Download</div>
+        </div>
+        <div class="chart">
+            <div class="cc">
+                <canvas style="width: 100%; height: 100%" id="third"></canvas>
+            </div>
+            <div class="sales1">${{: devicesales.t}}</div>
+            <div class="download" data-id="d">Download</div>
+        </div>
+    </div>
+    <div class="sales">
+      <div class="chart">
+          <div class="cc">
+              <canvas style="width: 100%; height: 100%" id="fourth"></canvas>
+          </div>
+          <div class="sales1">${{: devicesales.t}}</div>
+          <div class="download" data-id="d">Download</div>
+      </div>
+    </div>
+
+    <div class="sub-header-2">
+        Available Reports
+    </div>
+
+    <div class="reports">
+        <div class="downloadAll">
+            Download All
+        </div>
+
+        <div class="report">
+            <div class="reportHeader">
+                Monthly Total Sales
+            </div>
+            <div class="date">
+                {{:~getToday()}}
+            </div>
+            <div class="buttons" data-id="mts">
+                <div class="button border download">Download</div>
+                <div class="button email">Email to Colleague</div>
+            </div>
+        </div>
+
+        <div class="report">
+            <div class="reportHeader">
+                Quarterly Total Sales
+            </div>
+            <div class="date">
+                {{:~getToday()}}
+            </div>
+            <div class="buttons" data-id="qts">
+                <div class="button border download">Download</div>
+                <div class="button email">Email to Colleague</div>
+            </div>
+        </div>
+
+        <div class="report">
+            <div class="reportHeader">
+                Accesory Total Sales
+            </div>
+            <div class="date">
+                {{:~getToday()}}
+            </div>
+            <div class="buttons" data-id="ats">
+                <div class="button border download">Download</div>
+                <div class="button email">Email to Colleague</div>
+            </div>
+        </div>
+
+        <div class="report">
+            <div class="reportHeader">
+                Quarterly Accesory Sales
+            </div>
+            <div class="date">
+                {{:~getToday()}}
+            </div>
+            <div class="buttons" data-id="qas">
+                <div class="button border download">Download</div>
+                <div class="button email">Email to Colleague</div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="userTemplate" type="text/x-jsrender">
+    <div class="user">
+        <div class="name">
+            <div class="logo">{{:l}}</div>
+            <div class="text">{{:name}}</div>
+        </div>
+        <div class="name price">
+            ${{:s}}
+        </div>
+        <div class="name phone">
+            <img src="../images/icon-phone.png" class="logo icon">
+            <div class="text number">{{:phone}}</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-jsrender" id="salesTemplate">
+    <div class="header">
+        All Orders
+    </div>
+    <div class="allOrdersContainer">
+        <div class="searchArea">
+            <div class="inputArea">
+                <input class="inputArea-1" type="text" placeholder="Search by SKU, Product Name or Request Number">
+            </div>
+            <img src="../images/search.png" class="searchButton">
+            <div class="filter">
+                <div class="text">All</div>
+                <img src="../images/down-arrow.png" class="dropdownButton">
+                <div class="dropdown"></div>
+            </div>
+        </div>
+        <div class="orderHeader">
+            <div class="col col-1">Request No</div>
+            <div class="col col-2">Order Action</div>
+            <div class="col col-3">Requestor</div>
+            <div class="col col-4">Email Date/Time</div>
+            <div class="col col-5">Status</div>
+            <div class="col col-6">Action</div>
+        </div>
+        <div class="orders">
+            {{for d}}
+            <div class="order">
+                <div class="col col-1">{{: _raw.request_no}}</div>
+                <div class="col col-2">{{: _raw.orders.action}}</div>
+                <div class="col col-3">{{:_raw.requestor}}</div>
+                <div class="col col-4">{{:_raw.email_time}}</div>
+                <div class="col col-5">{{:status}}</div>
+                <div class="col col-6">Details</div>
+            </div>
+            {{/for}}
+        </div>
+        <div class="export">
+            <img src="../images/export.png" class="eb">
+        </div>
+    </div>
+</script>
+<script type="text/x-jsrender" id="dropdownTemplate">
+    <div class="list">{{:key}}</div>
+</script>
+
+<script type="text/x-jsrender" id="orderDetailTemplate">
+    <div class="header">
+        Request Number #{{:request_no}}
+    </div>
+    <div class="orderDetailContainer">
+        <div class="sub-header">SR# {{:orders.sr_no}}</div>
+        <div class="line-items">
+
+        </div>
+        <div class="information">
+            <div class="info-header">Request Information</div>
+            <div class="info-item">Email Date Time: {{: _meta.email_time || email_time}}</div>
+            <div class="info-item">Order Type: {{:_meta.order_type || order_type}}</div>
+            <div class="info-item">Priority: {{:_meta.priority || priority}}</div>
+            <div class="info-item">Cost Center: {{:_meta.cost_center || cost_center}}</div>
+            <div class="info-item">Project: {{:_meta.project || project}}</div>
+            <div class="info-item">Cost Center Description: {{:_meta.cost_center_description || cost_center_description}}</div>
+            <div class="info-item">Status: {{:_meta.status || status}}</div>
+            <div class="info-item">Service: {{:orders.service}}</div>
+            <div class="info-item">Requestor: {{:_meta.requestor || requestor}}</div>
+            <div class="info-item">Vendor: {{:orders.vendor}}</div>
+            <div class="info-item">Phone: {{:_meta.phone || phone}}</div>
+            <div class="info-item">Request Description: {{:_meta.request_description || request_description}}</div>
+            <div class="info-item">Submitted: {{:_meta.submitted || submitted}}</div>
+            <div class="info-item">Request Due: {{:_meta.requested_due || requested_due}}</div>
+            <div class="info-item">Location: {{:_meta.location_description || location_description}}</div>
+            <div class="info-item">Confirm Due: {{:_meta.confirmed_due || confirmed_due}}</div>
+            <div class="info-item">Agency Control: {{:_meta.agency_control || agency_control}}</div>
+            <div class="info-item">Agency: {{:_meta.agency || agency}}</div>
+        </div>
+    </div>
+</script>
+
+<script id="order-detail-liTemplate" type="text/x-jsrender">
+    {{for line_items}}
+    <div class="line-item">
+        <div class="li w10 logo">
+            <img src="../images/icon-black-star.png" class="image">
+        </div>
+        <div class="li w10 sr">
+            SR # {{:orders.request_no}}
+        </div>
+        <div class="li w20 info">
+            <div class="row-1 b">{{:orders.equipment_model_no}}</div>
+            <div class="row-2">{{:orders.service}}</div>
+        </div>
+        <div class="li w10 op-1">
+            {{:orders.action}}
+        </div>
+        <div class="li w10 op-2">
+            {{:Action}}
+        </div>
+        <div class="li w20 rc-detail">
+            <div class="row-1">RC QTY: {{:rcq}}</div>
+            <div class="row-2 rca" data-index="{{:#index}}">RC AMT: {{:rca}}
+                <img src="../images/edit.png" class="edit-icon">
+            </div>
+        </div>
+        <div class="li w20 nrc-detail">
+            <div class="row-1">NRC QTY: {{:nrcq}}</div>
+            <div class="row-2 nrca" data-index="{{:#index}}">NRC AMT: {{:nrca}}
+                <img src="../images/edit.png" class="edit-icon">
+            </div>
+        </div>
+    </div>
+    {{/for}}
+</script>
+
+<script id="productTemplate" type="text/x-jsrender">
+    <div class="header">
+        All Products
+    </div>
+    <div class="allOrdersContainer">
+        <div class="orderHeader" style="top:2rem">
+            <div class="col col-1">Name</div>
+            <div class="col col-2">Category</div>
+            <div class="col col-3">SKU Code</div>
+            <div class="col col-4">Nick Name</div>
+        </div>
+        <div class="orders" style="top:9rem">
+            {{for d}} {{if isActive ==1}}
+            <div class="order">
+                <div class="col col-1">{{:name}}</div>
+                <div class="col col-2">{{:category}}</div>
+                <div class="col col-3">{{:sku}}</div>
+                <div class="col col-4">{{:nickname}}</div>
+                <img data-index="{{:#index}}" src="../images/icon-delete.png" class="col product-delete" style="width: 5rem; height: 5rem; top: 1rem; margin-left: 4rem; cursor:pointer">
+                <img data-index="{{:#index}}" src="../images/edit.png" class="col product-edit" style="width: 5rem; height: 4rem; top: 1.5rem; margin-left: 4rem; cursor:pointer">
+            </div>
+            {{/if}} {{/for}}
+        </div>
+        <div class="export">
+            <img src="../images/icon-add.png" class="eb product-add" style="width: 8rem;top: -5rem;left: -5rem;">
+        </div>
+    </div>
+</script>
+
+<script id="addProductTemplate" type="text/x-jsrender">
+    <div class="pop-up">
+        <input class="p-row name" type="text" placeholder="Enter Name" value="{{:name}}">
+        <input class="p-row code" type="text" placeholder="Enter Sku Code" value="{{:sku}}">
+        <input class="p-row nname" type="text" placeholder="Enter Nick Name" value="{{:nickname}}">
+        <div class="p-row nob">Select Category</div>
+        {{for categories}}
+        <div class="p-row c">
+            <div class="check {{:class}}"></div>
+            <div class="text">{{:name}}</div>
+        </div>
+        {{/for}}
+        <div class="p-row f cancel">Cancel</div>
+        <div class="p-row nob f save">Save</div>
+    </div>
+</script>
+
+</html>

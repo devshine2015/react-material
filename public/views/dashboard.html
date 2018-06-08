@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width = device-width, initial-scale = 0, user-scalable = no, minimum-scale = 1, maximum-scale = 1">
+    <meta http-equiv="Expires" content="0" />
+    <meta name="HandheldFriendly" content="true">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="../css/fonts.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/screen.css">
+</head>
+
+<body>
+
+    <div class="mainContainer">
+        <div class="menus">
+            <div class="logo"><img src="../images/logo.png"/> </div>
+            <div class="menu" data-id="dashboard">
+                <div class="text"><i class="material-icons active">keyboard_arrow_right</i> Dashboard</div>
+            </div>
+
+            <div class="menu" data-id="sales">
+                <div class="text"><i class="material-icons">keyboard_arrow_right</i> Sales</div>
+            </div>
+
+            <div class="menu" data-id="products">
+                <div class="text"><i class="material-icons">keyboard_arrow_right</i> Products</div>
+            </div>
+
+            <div class="menu" data-id="tracking">
+                <div class="text"><i class="material-icons">keyboard_arrow_right</i> Logout</div>
+            </div>
+
+            <div class="copyright">
+                POWERED BY<br>
+                THE IT ARCHITECT 2018
+            </div>
+        </div>
+
+        <div class="dashboard">
+        </div>
+        <div class="pop-up-container">
+            <div class="pop-up">
+                <div class="pop-up-header">
+                    Enter New Price
+                </div>
+                <div class="pop-up-area">
+                    <input type="text" class="pop-up-input" placeholder="new amount">
+                </div>
+                <div class="pop-up-footer">
+                    <div class="pop-up-btn btn1">No</div>
+                    <div class="pop-up-btn btn2">Yes</div>
+                </div>
+            </div>
+        </div>
+        <div class="addProductContainer">
+
+        </div>
+    </div>
+</body>
+
+<script id="fileUploadTemplate" type="text/x-jsrender">
+
+</script>
+
+<!-- <script src="../scripts/socket.io.js"></script> -->
+<script src="../scripts/jquery.js"></script>
+<script src="../scripts/jsrender.js"></script>
+<script src="../scripts/jsviews.js"></script>
+<script src="../scripts/jslinq.js"></script>
+<script src="../scripts/moment.min.js"></script>
+<script src="../scripts/notify.js"></script>
+<script src="../scripts/jquery.cookie.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/dashboard.js"></script>
+<script src="../js/sales.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/pop-up.js"></script>
+
+<script type="text/x-jsrender" id="loaderTemplate">
+    <div class="loader">
+        <img src="../images/{{:icon}}" class="lImg">
+        <div class="text">{{: text}}</div>
+    </div>
+</script>
+<!-- Brandon Ikeda 02/05/2018 -->
+<script type="text/x-jsrender" id="dashboardTemplate">
+    <div class="charts">
+        <div class="chart">
+            <div class="title">TOTAL SALES 2018</div>
+            <p class="sales-value">${{: totalSales.t}}</p>
+            <div class="cc">
+                <canvas style="width: 100%; height: 100%" id="first"></canvas>
+            </div>
+        </div>
+        <div class="chart">
+            <div class="title">DEVICE SALES 2018</div>
+            <p class="sales-value">${{: accessorySales.t}}</p>
+            <div class="cc">
+                <canvas style="width: 100%; height: 100%" id="second"></canvas>
+            </div>
+        </div>
+        <div class="chart">
+            <div class="title">ACCESSORY SALES 2018</div>
+            <p class="sales-value">${{: devicesales.t}}</p>
+            <div class="cc">
+                <canvas style="width: 100%; height: 100%" id="third"></canvas>
+            </div>
+        </div>
+        <p class="desc">*Accuracy of category sales is dependent upon accuare inventory naming records.</p>
+    </div>
+    <div class="sales">
+      <div class="title-content">
+        <p>PRODUCT SALES 2018
+          <span class="controls">
+            <i class="material-icons">keyboard_arrow_right</i>
+            <i class="material-icons">keyboard_arrow_left</i>
+          </span>
+        </p>
+      </div>
+      <div class="chart">
+          <div class="cc">
+              <canvas style="width: 100%; height: 100%" id="fourth"></canvas>
+          </div>
+      </div>
+    </div>
+    <div class="downloads">
+      <p class="title">REPORT DOWNLOADS</p>
+      <div class="reports">
+        <div class="report">
+            <p class="reportHeader">2018 Total Sales<br><i class="material-icons reportAction">keyboard_arrow_down</i></p>
+        </div>
+        <div class="report">
+            <p class="reportHeader">2018 Q1 Total Sales<br><i class="material-icons reportAction">keyboard_arrow_down</i></p>
+        </div>
+        <div class="report">
+            <p class="reportHeader">2018 Accessory Sales<br><i class="material-icons reportAction">keyboard_arrow_down</i></p>
+        </div>
+        <div class="report">
+            <p class="reportHeader">2018 Q1 Accessory Sales<br><i class="material-icons reportAction">keyboard_arrow_down</i></p>
+        </div>
+      </div>
+    </div>
+</script>
+
+<script id="userTemplate" type="text/x-jsrender">
+    <div class="user">
+        <div class="name">
+            <div class="logo">{{:l}}</div>
+            <div class="text">{{:name}}</div>
+        </div>
+        <div class="name price">
+            ${{:s}}
+        </div>
+        <div class="name phone">
+            <img src="../images/icon-phone.png" class="logo icon">
+            <div class="text number">{{:phone}}</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-jsrender" id="salesTemplate">
+    <div class="allOrdersContainer">
+        <div class="searchArea">
+            <p class="inputArea">
+                <input class="inputArea-1" type="text" placeholder="Seach for product name, id or description">
+                <i class="material-icons searchButton">search</i>
+            </p>
+        </div>
+        <div class="orderHeader">
+            <div class="col col-1">NAME</div>
+            <div class="col col-2">REQUEST ID</div>
+            <div class="col col-3">DATE SENT</div>
+            <div class="col col-4">STATUS</div>
+            <div class="col col-5">DEPARTMENT</div>
+            <div class="col col-6">TOTAL SALE</div>
+            <div class="col col-7">DETAILS</div>
+        </div>
+        <div class="orders">
+            {{for d}}
+            <div class="order">
+                <div class="col col-1">{{: _raw.orders.action}}</div>
+                <div class="col col-2">{{: _raw.request_no}}</div>
+                <div class="col col-3">{{:_raw.submitted}}</div>
+                <div class="col col-4">{{:_raw.status}}</div>
+                <div class="col col-5">{{:email_time}}</div>
+                <div class="col col-6">Details</div>
+                <div class="col col-7"><i class="material-icons">keyboard_arrow_right</i></div>
+            </div>
+            {{/for}}
+        </div>
+        <div class="title-content">
+            <p>
+              <a>Show pending orders</a>
+              <span class="controls">
+                <i class="material-icons">keyboard_arrow_right</i>
+                <i class="material-icons">keyboard_arrow_left</i>
+              </span>
+            </p>
+        </div>
+    </div>
+</script>
+
+<script id="userTemplate" type="text/x-jsrender">
+    <div class="user">
+        <div class="name">
+            <div class="logo">{{:l}}</div>
+            <div class="text">{{:name}}</div>
+        </div>
+        <div class="name price">
+            ${{:s}}
+        </div>
+        <div class="name phone">
+            <img src="../images/icon-phone.png" class="logo icon">
+            <div class="text number">{{:phone}}</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-jsrender" id="salesTemplate">
+    <div class="allOrdersContainer">
+        <div class="searchArea">
+            <div class="inputArea">
+                <input class="inputArea-1" type="text" placeholder="Search by SKU, Product Name or Request Number">
+            </div>
+            <img src="../images/search.png" class="searchButton">
+            <div class="filter">
+                <div class="text">All</div>
+                <img src="../images/down-arrow.png" class="dropdownButton">
+                <div class="dropdown"></div>
+            </div>
+        </div>
+        <div class="orderHeader">
+            <div class="col col-1">Request No</div>
+            <div class="col col-2">Order Action</div>
+            <div class="col col-3">Requestor</div>
+            <div class="col col-4">Email Date/Time</div>
+            <div class="col col-5">Status</div>
+            <div class="col col-6">Action</div>
+        </div>
+        <div class="orders">
+            {{for d}}
+            <div class="order">
+                <div class="col col-1">{{: _raw.request_no}}</div>
+                <div class="col col-2">{{: _raw.orders.action}}</div>
+                <div class="col col-3">{{:_raw.requestor}}</div>
+                <div class="col col-4">{{:_raw.email_time}}</div>
+                <div class="col col-5">{{:status}}</div>
+                <div class="col col-6">Details</div>
+            </div>
+            {{/for}}
+        </div>
+    </div>
+</script>
+
+<script id="productTemplate" type="text/x-jsrender">
+    <div class="allOrdersContainer productsContainer">
+        <div class="orderHeader" style="top:0rem">
+            <div class="col col-1">NAME</div>
+            <div class="col col-2">CATEGORY</div>
+            <div class="col col-3">SKU CODE</div>
+            <div class="col col-4">NICKNAME</div>
+            <div class="col col-4">ACTIONS</div>
+        </div>
+        <div class="orders" style="top:10rem">
+            {{for d}} {{if isActive ==1}}
+            <div class="order">
+                <div class="col col-1">{{:name}}</div>
+                <div class="col col-2">{{:category}}</div>
+                <div class="col col-3">{{:sku}}</div>
+                <div class="col col-4">{{:nickname}}</div>
+                <div class="col col-5">
+                    <span data-index="{{:#index}}" class="col product-edit">Edit</span>
+                    <span data-index="{{:#index}}" class="col product-delete">Delete</span>
+                </div>
+            </div>
+            {{/if}} {{/for}}
+        </div>
+        <div class="title-content">
+            <p>
+              <a class="product-add" style="cursor: pointer">Add Product</a>
+              <span class="controls">
+                <i class="material-icons">keyboard_arrow_right</i>
+                <i class="material-icons">keyboard_arrow_left</i>
+              </span>
+            </p>
+      </div>
+    </div>
+</script>
+
+<script id="addProductTemplate" type="text/x-jsrender">
+    <div class="pop-up">
+        <label for="usr">Name</label>
+        <input type="text" class="p-row name" value="{{:name}}">
+        <br>
+        <label for="usr">Category</label>
+        <select class="p-row c">
+          {{for categories}}
+                <option class="p-row c">
+                    <div class="check {{:class}}"></div>
+                    <div class="text">{{:name}}</div>
+                </option>
+                {{/for}}
+        </select>
+        <br>
+        <label for="usr">SKU Code</label>
+        <input type="text" class="p-row code" value="{{:sku}}">
+        <br>
+        <label for="usr">Nickname</label>
+        <input type="text" class="p-row nname" value="{{:nickname}}">
+        <div class="p-row nob f save">Save</div>
+    </div>
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "converted_fileobject",
+  "plural": "converted_fileobjects",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "contents": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "status_date_change": {
+      "type": "date"
+    },
+    "dictionary_version": {
+      "type": "string"
+    },
+    "dictionary_approval": {
+      "type": "boolean"
+    },
+    "idkey": {
+      "type": "string"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "DENY"
+  }],
+  "methods": {}
+}

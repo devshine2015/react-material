@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "itasandbox-shard-00-00-51evd.mongodb.net:27017",
+    "port": 27017,
+    "url": "mongodb://Justinkdeveloper:SilverBells2017$$@itasandbox-shard-00-00-51evd.mongodb.net:27017,itasandbox-shard-00-01-51evd.mongodb.net:27017,itasandbox-shard-00-02-51evd.mongodb.net:27017/it-api?ssl=true&replicaSet=ITASandbox-shard-0&authSource=admin",
+    "database": "mongodb",
+    "password": "SilverBells2017$$",
+    "name": "db",
+    "user": "Justinkdeveloper",
+    "connector": "mongodb"
+  }
+}
